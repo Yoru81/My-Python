@@ -92,8 +92,96 @@ while True:
             Joke - Tells a joke
             Quote - Tells a quote
             Ping - See what it says  =)
-            Dev name - See who developed this bot.
-            Naruto - Draws Naruto!\n""")
+            Dev name - See who developed this bot
+            Naruto - Draws Naruto!
+            Senlen - Compare length of 2 sentences
+            FWS - Find a word in the given sentence
+            Tempcon - Convert temperature C-F or F-C
+            Currcon - Convert Dollars to Pounds and Pounds to Dollars
+            OE - Tells if entered number is Odd or Even
+            Kill - Kills a person
+            GNG - Guessing number game\n""")
+
+    elif enter_command.upper() == "GOOD MORNING":
+        print("\nGood Morning. Have a nice day!\n")
+
+    elif enter_command.upper() == "GNG":
+        import random
+
+        win = False
+        points = 1
+        a = random.randint(1, 100)
+
+        while (win == False):
+            input_num = int(input("Guess the number: "))
+
+            if input_num > a:
+                print("You guessed is higer than the number. Try Again")
+                points += 1
+
+            elif input_num < a:
+                print("You guessed is lesser than the number. Try Again")
+                points += 1
+
+            else:
+                win = True
+        
+        print("\nCongratulations!!!! You guessed the right number.")
+        print("Number of tries:", points)
+
+
+    elif enter_command.upper() == "KILL":
+        target = input("Who do you want to kill?: ")
+
+        print(target + " Died by fallling of a clif! ")
+
+
+    elif enter_command.upper() == "OE":
+        n = int(input("Enter a number: "))
+        if (n % 2 == 0):
+            print("Even")
+
+        else:
+            print("Odd")
+
+    elif enter_command.upper() == "CURRCON":
+        Currency = float(input("Enter Currency value: "))
+        unit = input("$(D) or £(P): ")
+        if unit.upper() == "D":
+           converted = (Currency * 0.7)
+           print("Currency value in Pounds: " + str(converted))
+        else:
+             converted = (Currency * 1.4)
+             print("Currency value in Dollars: " + str(converted))
+
+
+    elif enter_command.upper() == "TEMPCON":
+        Temperature = int(input("Enter Temperature: "))
+        unit = input("C or F: ")
+
+        if unit.upper() == "C":
+           converted = (Temperature * 9/5) + 32
+           print("Temperature in Farhenheit: " + str(converted))
+        else:
+             converted = (Temperature -32) * 5/9
+             print("Temperature in Celcius: " + str(converted ))
+
+    elif enter_command.upper() == "SENLEN":
+        first_sen = input("Enter first sentence[Minimum 5 words]: ")
+        second_sen = input("Enter second sentence[Minimum 5 words]: ")
+
+        first_senlen = len(first_sen)
+        second_senlen = len(second_sen)
+
+        if first_senlen > second_senlen:
+           print("First Sentence is longer than the second sentence.")
+
+        elif first_senlen == second_senlen:
+             print("Length of both sentences are equal.")
+
+        else:
+             print("Second sentence is longer than the first sentence.")
+
 
     elif enter_command.upper() == "MOOD":
         mood = input("How is your mood rn(Sad or Happy)? ")
@@ -108,7 +196,7 @@ YOU: Feel better\n""")
         else:
             print("\nERROR. If your happy enter happy.If your sad enter sad.\n")
 
-    
+
     elif enter_command.upper() == "NARUTO":
         print("""                                                                            
                                       ▓▓▓▓▓▓  ▓▓▓▓▓▓                                
@@ -174,6 +262,6 @@ YOU: Feel better\n""")
         break
 
     else:
-        print("\nERROR.You have entered an invalid command. Please try again.\n")
+        print("""\nERROR.You have entered an invalid command. Type Help to see all commands.\n""")
      
      
