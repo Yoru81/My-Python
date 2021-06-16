@@ -42,9 +42,9 @@ while True:
 
     elif enter_command.upper() == "JOKE":
         import random
-
         joke_list = [" What’s the best thing about Switzerland? I don’t know, but the flag is a big plus." , " What did the traffic light say to the other? Stop looking at me, I'm changing! " , "Why do we tell actors to break a leg? Because every play has a cast. " , "A bear walks into a bar and says, Give me a whiskey and … cola. “Why the big pause?” asks the bartender. The bear shrugged. “I’m not sure; I was born with them.” " ]
         print(random.choice(joke_list))
+
     elif enter_command.upper() == "QUOTE":
         print("\n\"If you cannot do great things, do small things in a great way\"\n")
 
@@ -103,7 +103,11 @@ while True:
             OE - Tells if entered number is Odd or Even
             Kill - Kills a person
             GNG - Guessing number game
-            Compare - Compares the 2 enterd numbers.\n""")
+            Compare - Compares the 2 enterd numbers.
+            Anime Ranking - Gives the top 5 anime.\n""")
+
+    elif enter_command.upper() == "ANIME RANKING":
+        print("#1 Fullmetal Alchemist Brotherhood\n#2 Demon Slayer\n#3 Naruto\n#4 One Piece\n#5 Attack on Titan")
 
     elif enter_command.upper() == "COMPARE":
         number_1 = input("Enter first number: ")
@@ -120,6 +124,9 @@ while True:
 
     elif enter_command.upper() == "GOOD MORNING":
         print("\nGood Morning. Have a nice day!\n")
+
+    elif enter_command.upper() == "GOOD NIGHT":
+        print("Have a Good Night of sleep!")
 
     elif enter_command.upper() == "GNG":
         import random
