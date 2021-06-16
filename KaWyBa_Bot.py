@@ -3,7 +3,7 @@ while True:
 
     if enter_command.upper() == "CALCULATE":
         first_number = int(input("Enter First Number: "))
-        print("+ = Addition\n- = Subtraction\n/ = Division\n* = Multiplication\n// = Integer Division\n% = Reminder only\n0 = exit")
+        print("+ = Addition\n- = Subtraction\n/ = Division\n* = Multiplication\n// = Integer Division\n% = Reminder only\n")
         character = input("Enter a character: ")
         second_number = int(input("Enter Second Number: "))
 
@@ -41,8 +41,10 @@ while True:
 
 
     elif enter_command.upper() == "JOKE":
-        print("\nWhat did the traffic light say to the other? Stop looking at me, I'm changing! \n")
+        import random
 
+        joke_list = [" What’s the best thing about Switzerland? I don’t know, but the flag is a big plus." , " What did the traffic light say to the other? Stop looking at me, I'm changing! " , "Why do we tell actors to break a leg? Because every play has a cast. " , "A bear walks into a bar and says, Give me a whiskey and … cola. “Why the big pause?” asks the bartender. The bear shrugged. “I’m not sure; I was born with them.” " ]
+        print(random.choice(joke_list))
     elif enter_command.upper() == "QUOTE":
         print("\n\"If you cannot do great things, do small things in a great way\"\n")
 
@@ -100,7 +102,21 @@ while True:
             Currcon - Convert Dollars to Pounds and Pounds to Dollars
             OE - Tells if entered number is Odd or Even
             Kill - Kills a person
-            GNG - Guessing number game\n""")
+            GNG - Guessing number game
+            Compare - Compares the 2 enterd numbers.\n""")
+
+    elif enter_command.upper() == "COMPARE":
+        number_1 = input("Enter first number: ")
+        number_2 = input("Enter second number: ")
+
+        if number_1 > number_2:
+            print( number_1 + " is greater than " + number_2)
+
+        elif number_1 < number_2:
+            print( number_1 + " is lesser than " + number_2)
+
+        else:
+            print("Both given numbers are equal.")
 
     elif enter_command.upper() == "GOOD MORNING":
         print("\nGood Morning. Have a nice day!\n")
